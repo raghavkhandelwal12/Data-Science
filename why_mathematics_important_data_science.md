@@ -1,4 +1,4 @@
-# Why maths Important for data science and machine learning?
+# Why maths Important for data science and Artificial Intelligence?
 
 - Large Language model like `Chatgpt, Grok, LLAMA, Gemini, Claude and more` are built on core mathematical ideas. `Linear algebra, Probability & Statistics, calculus, optimization underpin how represent text, learn from data and make prediction`. Each concept play a specific role: `Linear algebra gives structure(vector, matrices) for processing data, Probability/Statistics model uncertainity in language, Calculus provide gradient to learn by adjusting weights and Optimization algorithm minimize errors during training.`. Together these form the backbone of both LLM and broader data science.
 
@@ -6,7 +6,7 @@
 
 # Why is Mathematics essential for Data Science?
 
-- Mathematics is the backbone of the data science. `Linear algebra, Calculus, Probability/Statistics, Optimization play essential role to uncover hidden patterns in data and understanding the relationship among features`. They also help us tackle the comple calculations. `They guiding to develop insightful solutions and predicting based on historical data`.
+- Mathematics is the backbone of the data science. `Linear algebra, Calculus, Probability/Statistics, Optimization play essential role to uncover hidden patterns in data and understanding the relationship among features`. They also help us tackle the complex calculations. `They guiding to develop insightful solutions and predicting based on historical data`.
 
 # How much Mathematical knowledge require to become a data Scientist?
 

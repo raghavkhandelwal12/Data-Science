@@ -18,12 +18,12 @@
 4
 ```
 
-* The `>>>` symbol is the Python prompt. Type the expression (`2 + 2`) after the prompt.
-* The result (`4`) is Python’s response—you don't need to type it.
+- The `>>>` is called a `prompt`. It means you should type what comes after it `(2+2)`.
+- The number `4` is the result that python gives you back. You don't need to type that part.
 
 **You may also see multi-line blocks like this:**
 
-```python
+```
 >>> if True:
 ...     print("Hello")
 ...
@@ -51,12 +51,12 @@ print(text)
 
 <h2 id="using-python-as-a-calculator">Using Python as a Calculator</h2>
 
-* Start the interpreter and wait for the `>>>` prompt.
-* You can perform arithmetic directly in the interpreter.
+- Let's try some simple Python commands. Start the interpreter and wait for the primary prompt, `>>>`. (It should not take long).
 
 <h2 id="numbers">Numbers</h2>
 
-* Python can be used as a simple calculator. Operators like `+`, `-`, `*`, and `/` are used for arithmetic. Use parentheses `()` for grouping.
+- The interpreter acts as a simple calculator: we can type an expression at it and it will write the value. Expression syntax straightforward : The operators `+, -, *, and /` can be used to perform `arithmetic,` parentheses `(())` can be used for grouping.
+- In your terminal just type `Python` to use interpreter as a calculator.
 
 ```python
 >>> 2 + 2
@@ -70,6 +70,7 @@ print(text)
 ```
 
 * Integers like `2, 4, 20` have type `int`. Numbers with decimals like `5.0, 1.6` have type `float`.
+*  Division `(/)` always returns a `float`. To do `Floor division` and get an integer result we can use `//` operator ; to calculate the remainder we can use `%`.
 
 ```python
 >>> 17 / 3
@@ -91,30 +92,44 @@ print(text)
 128
 ```
 
-* Variable assignment:
+- The `equal sign(=)` is used to assing value to variables. 
 
 ```python
 >>> width = 20
 >>> height = 5 * 9
 >>> width * height
+```
+**Output**
+```
 900
 ```
 
-* Accessing undefined variables:
+- If a variable  is not `defined (assign a value), trying to use it will give an error`.
+
 
 ```python
->>> n
+>>> n # try to access an undefined variable
+```
+**Output**
+```
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
 NameError: name 'n' is not defined
 ```
 
-* Mixed type operations:
+- There is full support for floating point; operators with mixed type operands convert the `interger operand to floating point`.
 
-```python
+```
 >>> 4 * 3.75 - 1
+
+```
+**Output**
+```
 14.0
+
 ```
 
-* Using `_` to access the last result:
+- In interactive mode, The last printed expression is assigned the variable `_`. This means that when we are using Python as a desk calculator, it is somewhat easier to continue calculations.
 
 ```python
 >>> tax = 12.5 / 100
@@ -127,55 +142,109 @@ NameError: name 'n' is not defined
 113.06
 ```
 
-* Python supports `int`, `float`, `Decimal`, `Fraction`, and `complex` (e.g., `3 + 5j`).
+- The variable should be treated as read-only by the user. Don't explicitly assign a value to it - You would create an indeprendent local variable with the same name masking the built-in variable with its magic behavior.
+
+- In addition to `int and float`. Python supports other type of numbers, such as `Decimal and Fraction`. Python also has built-in support for `complex numbers` and uses the `j or J suffix` to indicate the imaginary part `(e.g. 3+5j)`
 
 <h2 id="text">Text</h2>
 
-* Python supports string values:
+- Python can manipulate text (represented by type `str, so-called strings`) as well as numbers. This includes `character "!", words "rabbits", names "Paris", sentences "Got your back", etc`. They can be enclosed in `single quotes('...')` or `double quotes("...")` with the same result
 
-```python
->>> 'spam eggs'
+```
+>>> 'spam eggs' #single quotes
+```
+**Output**
+```
 'spam eggs'
->>> "Paris rabbit got you back : !yay!"
+```
+```
+>>> "Paris rabbit got you back : !yay!" # double quotes
+```
+**Output**
+```
 'Paris rabbit got you back : !yay!'
->>> '1975'
+```
+```
+'1975' # digits and numerals enclosed in quotes are also strings
+```
+**Output**
+```
 '1975'
 ```
 
-* Escaping quotes:
+- To quote a quote, we need to "escape" it be preceeding it with `\`. Alternatively, we can use the other type of quotation marks.
 
-```python
->>> 'doesn\'t'
+
+```
+>>>'doesn\'t' # use \' to escape single quotes
+```
+**Output**
+```
 "doesn't"
->>> "doesn't"
+```
+
+```
+>>>"doesn't" # ... or use double quotes instead
+```
+**Output**
+```
 "doesn't"
->>> ' "Yes," they said.'
+```
+
+```
+' "Yes," they said.'
+```
+**Output**
+```
 ' "Yes," they said.'
 ```
 
-* Newlines and `print()`:
+- In The Python  shell, the string definition and output string can look different. The `print()` function produces a more readable output, by omitting the enclosing quotes and by printing escapes and special characters.
 
-```python
-s = 'First line.\nSecond line.'
-s
-# 'First line.\nSecond line.'
-print(s)
-# First line.
-# Second line.
+```
+s = 'First line. \nSecond line.' #\n means new line
+s #without  print(), special characters are included in the string
 ```
 
-* Raw strings (avoid escape characters):
+**Output**
+```
+'First line.\nSecond line.'
+```
+```
+print(s)
+```
+**Output**
+```
+First line
+Second line
+```
 
-```python
-print('C:\\some\\name')
-# C:\some\name
-print(r'C:\some\name')
-# C:\some\name
+- If we don't want characters prefaced by `\` to be interpreted as special characters, we can use raw strings by adding an `r` before the first quotes.
+
+```
+print('C:\some\name') # here \n means newline!
+```
+**Output**
+```
+C:\some
+ame
+```
+
+```
+print(r'C:\some\name') #note the r before the quote
+```
+**Output**
+```
+C:\some\name
 ```
 
 <h2 id="multi-line-strings">Multi-line Strings</h2>
 
-* Using triple quotes for multi-line strings:
+# Multi-line Strings
+
+- We can write strings that go over `mulitiple lines` by using `triple quotes-like """ or '''`.
+- New line(pressing enter) are `included in the string`.
+- If you don't want the line break, you can add a `backslash(\)` at the end of the line to ignore the enter.
 
 ```python
 print("""
@@ -193,52 +262,160 @@ Usage: thingy [OPTIONS]
     -H hostname     Hostname to connect to
 ```
 
-* String repetition and concatenation:
+- Strings can be `concatendated(glued together)` with the `+ operator, and repeated with *`.
 
-```python
-3 * 'raghav' + 'khandelwal'
-# 'raghavraghavraghavkhandelwal'
-'Py' 'thon'
-# 'Python'
 ```
+# 3 time 'raghav', followed by 'khandelwal'
+3 * 'raghav' + 'khandelwal'
+```
+**Output**
+```
+'raghavraghavraghavkhandelwal'
+```
+- Two or more strings literals `(i.e. the ones enclosed between quotes)` next to each othe are automatically concatenated.
+
+```
+'Py' 'thon'
+```
+**Output**
+```
+'Python'
+```
+- The feature is particularly useful when we start break long strings.
 
 * Joining strings using parentheses:
 
-```python
-text = ('Put several strings with parentheses '
-        'to have them joined together.')
+```
+text = ('Put several strings with parentheses ' 
+        'to have them joined them together.')
 print(text)
-# Put several strings with parentheses to have them joined together.
 ```
 
-* Concatenating variable and literal using `+`:
+**Output**
+```
+Put several strings with parentheses to have them joined them together.
+```
+- This only works with two literals through, not with variables or expressions:
+```
+prefix = 'Py'
+prefix 'thon' # can't concatenate a variable and a string literal.
+```
+**Output**
+```
+Cell In[16], line 2
+    prefix 'thon' # can't concatenate a variable and a string literal.
+           ^
+SyntaxError: invalid syntax
+```
 
-```python
+- If we want to concatenate variables or a variable and a literal, use `+`.
+
+```
 prefix = 'Py'
 prefix + 'thon'
-# 'Python'
 ```
 
-* String indexing:
+**Output**
+```
+'Python'
+```
 
-```python
+- Strings can be indexed(subscripted), with the first character `having index 0`. There is no seperate character type; a character is simply a string size one.
+
+```
 word = 'Python'
-word[0]    # 'P'
-word[5]    # 'n'
-word[-1]   # 'n'
-word[-2]   # 'o'
+word[0] # character in position 0
+```
+**Output**
+```
+'P'
+```
+```
+word[5] # character in position 5
+```
+**Output**
+```
+'n'
+```
+- Indices may also be negative numbers, to start counting from the right.
+
+```
+word = 'Python'
+word[-1] # last character
+```
+**Output**
+```
+'n'
+```
+```
+word[-2] #second character
+```
+**Output**
+```
+'o'
 ```
 
-* String slicing:
+**Note that since -0 is the same as 0, negative indices start from -1**.
 
-```python
-word[0:2]    # 'Py'
-word[2:5]    # 'tho'
-word[:2]     # 'Py'
-word[4:]     # 'on'
-word[-2:]    # 'on'
-word[:2] + word[2:]  # 'Python'
+- In addition to indexing, slicing is also supported. While `indexing is used to obtain individual character, slicing allows to obtain a substring`.
+
+
 ```
+word = 'Python'
+word[0:2] # Characters from position 0(included) to 2(excluded).
+```
+**Output**
+```
+'Py'
+```
+
+```
+word = 'Python'
+word[2:5] # characters from position 2(included) to 5 (excluded)
+```
+**Output**
+```
+'tho'
+```
+- Slice indices have useful default; an omitted first index defaults to zero, an omitted second index defaults to the size of the string being sliced.
+
+```
+word = 'Python'
+word[:2] # character from the begining to position 2(excluded)
+```
+**Output**
+```
+'Py'
+```
+
+```
+word = 'Python'
+word[4:] # character from position 4(included) to the end
+```
+**Output**
+```
+'on'
+```
+```
+word = 'Python'
+word[-2:]  # characters from the second-last(included) to the end
+```
+**Output**
+```
+'on'
+```
+
+- Now how the `start is always included, and the end always excluded`. This makes sure that `s[:i] + s[i:]` is always equal to s.
+```
+word = 'Python'
+word[:2]+word[2:]
+```
+**Output**
+```
+'Python'
+```
+
+- One ways to remember how slices work is to think of the indices as pointing between character, with the `left edge of the first character numbered 0. Then the right edge of the last character of a string of n character has index n, for example`.
 
 * String slice diagram:
 
@@ -257,18 +434,89 @@ word[42]      # IndexError
 word[4:42]    # 'on'
 word[42:]     # ''
 ```
+- The first row of number give the position `of the indices 0...6` in the string. The second row gives the corresponding `negative indices. ` the slice from `i to j` consist all characters between the edges labeled i and j , respectively.
 
-* Strings are immutable:
+- For non-negative indices, the length of a slice is the difference of the indices, if both are within bounds, `for examples the lenght of **word[1:3] is 2**`.
 
-```python
-word[0] = 'J'       # TypeError
-'J' + word[1:]      # 'Jython'
-word[:2] + 'py'     # 'Pypy'
+- **Attempting to use an index that is too large will result in an error**.
+
+```
+word = 'Python'
+word[42] # the word only has 6 characters
 ```
 
-* Get the length of a string:
+**Output**
+```
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+Cell In[28], line 2
+      1 word = 'Python'
+----> 2 word[42] 
 
-```python
+IndexError: string index out of range
+```
+
+- **However, out of range slice indexes are handled gracefully when used for slicing.**
+
+```
+word = 'Python'
+word[4:42]
+```
+**Output**
+```
+'on'
+```
+
+```
+word = 'Python'
+word[42:]
+```
+**Output**
+```
+''
+```
+- **Python strings cannot be changed - they are `immutable`. Therefore, assigning to an index position in the string results in an error.**
+
+```
+word = 'Python'
+word[0]='J'
+```
+**Output**
+```
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+Cell In[31], line 2
+      1 word = 'Python'
+----> 2 word[0]='J'
+
+TypeError: 'str' object does not support item assignment
+```
+- **If we need a different string, we should create a new one**.
+
+```
+word = 'Python'
+'J' + word[1:]
+```
+**Output**
+```
+'Jython'
+```
+
+```
+word = 'Python'
+word[:2] + 'py'
+```
+**Output**
+```
+'Pypy'
+```
+- The built-in function `len()` returns the length of the string.
+```
 s = 'studfsaguaghasgagfg'
-print(len(s))  # 19
+print(len(s))
 ```
+**Output**
+```
+19
+```
+

@@ -205,4 +205,4 @@ User vector = [4, 5, 2, 0, 1]
 
 3. `Sensor Data` : IOT devices capture temprature, pressure, humidity, all packaged as vector.
 
-\mathbb{R}
+
